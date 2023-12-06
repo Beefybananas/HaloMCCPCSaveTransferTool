@@ -45,6 +45,7 @@
             this.OpenedLabel = new System.Windows.Forms.Label();
             this.Open = new System.Windows.Forms.Button();
             this.exportAndSettingsTabControl = new System.Windows.Forms.TabControl();
+            this.ImportTab = new System.Windows.Forms.TabPage();
             this.ManageTab = new System.Windows.Forms.TabPage();
             this.MapAndGameTypeTabControl = new System.Windows.Forms.TabControl();
             this.MapsTab = new System.Windows.Forms.TabPage();
@@ -60,7 +61,14 @@
             this.GitHubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.ImportTab = new System.Windows.Forms.TabPage();
+            this.ImportTable = new System.Windows.Forms.TableLayoutPanel();
+            this.OpenPanel = new System.Windows.Forms.Panel();
+            this.GamesTabControl = new System.Windows.Forms.TabControl();
+            this.ReachTab_i = new System.Windows.Forms.TabPage();
+            this.Halo3Tab_i = new System.Windows.Forms.TabPage();
+            this.Halo4Tab_i = new System.Windows.Forms.TabPage();
+            this.Open_i = new System.Windows.Forms.Button();
+            this.FilesLabel_i = new System.Windows.Forms.Label();
             this.ExportTab.SuspendLayout();
             this.FilesPannel.SuspendLayout();
             this.gameTabControl.SuspendLayout();
@@ -70,12 +78,16 @@
             this.Halo4Tab.SuspendLayout();
             this.OpenPannel.SuspendLayout();
             this.exportAndSettingsTabControl.SuspendLayout();
+            this.ImportTab.SuspendLayout();
             this.ManageTab.SuspendLayout();
             this.MapAndGameTypeTabControl.SuspendLayout();
             this.MapsTab.SuspendLayout();
             this.GameTypesTab.SuspendLayout();
             this.SettingsTab.SuspendLayout();
             this.OtherTabPage.SuspendLayout();
+            this.ImportTable.SuspendLayout();
+            this.OpenPanel.SuspendLayout();
+            this.GamesTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // OutputTextBox
@@ -247,6 +259,18 @@
             this.exportAndSettingsTabControl.Size = new System.Drawing.Size(1017, 465);
             this.exportAndSettingsTabControl.TabIndex = 8;
             // 
+            // ImportTab
+            // 
+            this.ImportTab.Controls.Add(this.ImportTable);
+            this.ImportTab.Location = new System.Drawing.Point(4, 22);
+            this.ImportTab.Name = "ImportTab";
+            this.ImportTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ImportTab.Size = new System.Drawing.Size(1009, 439);
+            this.ImportTab.TabIndex = 4;
+            this.ImportTab.Text = "Import";
+            this.ImportTab.UseVisualStyleBackColor = true;
+            this.ImportTab.Click += new System.EventHandler(this.ImportTab_Click);
+            // 
             // ManageTab
             // 
             this.ManageTab.Controls.Add(this.MapAndGameTypeTabControl);
@@ -287,6 +311,7 @@
             this.ManageMapsPanel.Name = "ManageMapsPanel";
             this.ManageMapsPanel.Size = new System.Drawing.Size(989, 401);
             this.ManageMapsPanel.TabIndex = 0;
+            this.ManageMapsPanel.Load += new System.EventHandler(this.ManageMapsPanel_Load);
             // 
             // GameTypesTab
             // 
@@ -399,15 +424,88 @@
             this.saveFileDialog.AddExtension = false;
             this.saveFileDialog.CheckFileExists = true;
             // 
-            // ImportTab
+            // ImportTable
             // 
-            this.ImportTab.Location = new System.Drawing.Point(4, 22);
-            this.ImportTab.Name = "ImportTab";
-            this.ImportTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ImportTab.Size = new System.Drawing.Size(1009, 439);
-            this.ImportTab.TabIndex = 4;
-            this.ImportTab.Text = "Import";
-            this.ImportTab.UseVisualStyleBackColor = true;
+            this.ImportTable.ColumnCount = 1;
+            this.ImportTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ImportTable.Controls.Add(this.GamesTabControl, 0, 1);
+            this.ImportTable.Controls.Add(this.OpenPanel, 0, 0);
+            this.ImportTable.Location = new System.Drawing.Point(3, 3);
+            this.ImportTable.Name = "ImportTable";
+            this.ImportTable.RowCount = 2;
+            this.ImportTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.ImportTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ImportTable.Size = new System.Drawing.Size(1003, 433);
+            this.ImportTable.TabIndex = 0;
+            this.ImportTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // OpenPanel
+            // 
+            this.OpenPanel.Controls.Add(this.FilesLabel_i);
+            this.OpenPanel.Controls.Add(this.Open_i);
+            this.OpenPanel.Location = new System.Drawing.Point(3, 3);
+            this.OpenPanel.Name = "OpenPanel";
+            this.OpenPanel.Size = new System.Drawing.Size(997, 34);
+            this.OpenPanel.TabIndex = 0;
+            // 
+            // GamesTabControl
+            // 
+            this.GamesTabControl.Controls.Add(this.ReachTab_i);
+            this.GamesTabControl.Controls.Add(this.Halo3Tab_i);
+            this.GamesTabControl.Controls.Add(this.Halo4Tab_i);
+            this.GamesTabControl.Location = new System.Drawing.Point(3, 43);
+            this.GamesTabControl.Name = "GamesTabControl";
+            this.GamesTabControl.SelectedIndex = 0;
+            this.GamesTabControl.Size = new System.Drawing.Size(997, 387);
+            this.GamesTabControl.TabIndex = 1;
+            // 
+            // ReachTab_i
+            // 
+            this.ReachTab_i.Location = new System.Drawing.Point(4, 22);
+            this.ReachTab_i.Name = "ReachTab_i";
+            this.ReachTab_i.Padding = new System.Windows.Forms.Padding(3);
+            this.ReachTab_i.Size = new System.Drawing.Size(989, 361);
+            this.ReachTab_i.TabIndex = 0;
+            this.ReachTab_i.Text = "Reach";
+            this.ReachTab_i.UseVisualStyleBackColor = true;
+            // 
+            // Halo3Tab_i
+            // 
+            this.Halo3Tab_i.Location = new System.Drawing.Point(4, 22);
+            this.Halo3Tab_i.Name = "Halo3Tab_i";
+            this.Halo3Tab_i.Padding = new System.Windows.Forms.Padding(3);
+            this.Halo3Tab_i.Size = new System.Drawing.Size(989, 361);
+            this.Halo3Tab_i.TabIndex = 1;
+            this.Halo3Tab_i.Text = "Halo 3";
+            this.Halo3Tab_i.UseVisualStyleBackColor = true;
+            // 
+            // Halo4Tab_i
+            // 
+            this.Halo4Tab_i.Location = new System.Drawing.Point(4, 22);
+            this.Halo4Tab_i.Name = "Halo4Tab_i";
+            this.Halo4Tab_i.Size = new System.Drawing.Size(989, 361);
+            this.Halo4Tab_i.TabIndex = 2;
+            this.Halo4Tab_i.Text = "Halo 4";
+            this.Halo4Tab_i.UseVisualStyleBackColor = true;
+            // 
+            // Open_i
+            // 
+            this.Open_i.Location = new System.Drawing.Point(3, 3);
+            this.Open_i.Name = "Open_i";
+            this.Open_i.Size = new System.Drawing.Size(100, 28);
+            this.Open_i.TabIndex = 0;
+            this.Open_i.Text = "Open";
+            this.Open_i.UseVisualStyleBackColor = true;
+            // 
+            // FilesLabel_i
+            // 
+            this.FilesLabel_i.AutoSize = true;
+            this.FilesLabel_i.Location = new System.Drawing.Point(109, 11);
+            this.FilesLabel_i.Name = "FilesLabel_i";
+            this.FilesLabel_i.Size = new System.Drawing.Size(65, 13);
+            this.FilesLabel_i.TabIndex = 1;
+            this.FilesLabel_i.Text = "MCC files in:";
+            this.FilesLabel_i.Click += new System.EventHandler(this.FilesLabel_i_Click);
             // 
             // MainWindow
             // 
@@ -429,6 +527,7 @@
             this.OpenPannel.ResumeLayout(false);
             this.OpenPannel.PerformLayout();
             this.exportAndSettingsTabControl.ResumeLayout(false);
+            this.ImportTab.ResumeLayout(false);
             this.ManageTab.ResumeLayout(false);
             this.MapAndGameTypeTabControl.ResumeLayout(false);
             this.MapsTab.ResumeLayout(false);
@@ -436,6 +535,10 @@
             this.SettingsTab.ResumeLayout(false);
             this.OtherTabPage.ResumeLayout(false);
             this.OtherTabPage.PerformLayout();
+            this.ImportTable.ResumeLayout(false);
+            this.OpenPanel.ResumeLayout(false);
+            this.OpenPanel.PerformLayout();
+            this.GamesTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -473,6 +576,14 @@
         private System.Windows.Forms.TabPage Halo4Tab;
         private ExportPanel Halo4ExportPanel;
         private System.Windows.Forms.TabPage ImportTab;
+        private System.Windows.Forms.TableLayoutPanel ImportTable;
+        private System.Windows.Forms.TabControl GamesTabControl;
+        private System.Windows.Forms.TabPage ReachTab_i;
+        private System.Windows.Forms.TabPage Halo3Tab_i;
+        private System.Windows.Forms.TabPage Halo4Tab_i;
+        private System.Windows.Forms.Panel OpenPanel;
+        private System.Windows.Forms.Label FilesLabel_i;
+        private System.Windows.Forms.Button Open_i;
     }
 }
 

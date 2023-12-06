@@ -181,5 +181,30 @@ namespace HaloMCCPCSaveTransferTool
             System.Diagnostics.Process.Start("https://github.com/ELREVENGE/HaloMCCPCSaveTransferTool/issues");
         }
         #endregion
+
+        private void ManageMapsPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ImportTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FilesLabel_i_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
