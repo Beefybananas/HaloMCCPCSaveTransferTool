@@ -161,6 +161,8 @@ namespace HaloMCCPCSaveTransferTool
             }
         }
         #endregion
+        #region Import tab
+        #endregion
         #region Help/Other tab
         private void HelpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
