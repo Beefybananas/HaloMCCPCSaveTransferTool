@@ -1,6 +1,5 @@
 ﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -161,8 +160,6 @@ namespace HaloMCCPCSaveTransferTool
             }
         }
         #endregion
-        #region Import tab
-        #endregion
         #region Help/Other tab
         private void HelpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -181,30 +178,63 @@ namespace HaloMCCPCSaveTransferTool
             System.Diagnostics.Process.Start("https://github.com/ELREVENGE/HaloMCCPCSaveTransferTool/issues");
         }
         #endregion
-
-        private void ManageMapsPanel_Load(object sender, EventArgs e)
+        #region Import tab
+        string openedDirectory_import = "";
+        private void Open_i_Click(object sender, EventArgs e)
         {
+            selectDirectoryDialog.InitialDirectory = openedDirectory_import;
+            if (selectDirectoryDialog.ShowDialog() == CommonFileDialogResult.Ok && Directory.Exists(selectDirectoryDialog.FileName))
+            {
+                UpdateOpened_import(selectDirectoryDialog.FileName);
+            }
+        }
+        void UpdateOpened_import(string opened)
+        {
+            if (opened != null && opened != "")
+            {
+                Output.WriteLine("Updating from folder " + selectDirectoryDialog.FileName);
+                openedDirectory_import = opened;
+                selectDirectoryDialog.InitialDirectory = opened;
+                OpenedLabel_import.Text = "MCC files in: " + opened;
+                UpdateLists_import(HaloX360FileIO.GetHaloFilesFromDirectory(selectDirectoryDialog.FileName));
+            }
+            else
+            {
+                openedDirectory_import = opened;
+                selectDirectoryDialog.InitialDirectory = ExportToWindow.GetOtherDirectory();
+                OpenedLabel_import.Text = "MCC files in: ";
+                UpdateLists_import(new HaloX360FileIO.HaloFiles(true));
+            }
 
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        void UpdateLists_import(HaloX360FileIO.HaloFiles files)
         {
+            Output.WriteLine("Import not supported!");
+            /*Output.WriteLine("Updating Import tab lists");
+            loadedFiles = files;
+            ReachImportPanel.Clear();
+            Halo3ImportPanel.Clear();
+            //Halo3ODSTImportPanel.Clear();
+            Halo4ImportPanel.Clear();
+            Output.WriteLine(files.Reach.Maps.Count + " Maps, " + files.Reach.GameTypes.Count + " Gametypes, and " + files.Reach.Screenshots.Count + " Screenshots for Halo: Reach");
+            ReachImportPanel.Add(files.Reach.Maps, ExportPanel.FileType.Map);
+            ReachImportPanel.Add(files.Reach.GameTypes, ExportPanel.FileType.Gametype);
+            ReachImportPanel.Add(files.Reach.Screenshots, ExportPanel.FileType.Screenshot);
+            Output.WriteLine(files.Halo3.Maps.Count + " Maps, " + files.Halo3.GameTypes.Count + " Gametypes, and " + files.Reach.Screenshots.Count + " Screenshots for Halo 3");
+            Halo3ImportPanel.Add(files.Halo3.Maps, ExportPanel.FileType.Map);
+            Halo3ImportPanel.Add(files.Halo3.GameTypes, ExportPanel.FileType.Gametype);
+            Halo3ImportPanel.Add(files.Halo3.Screenshots, ExportPanel.FileType.Screenshot);
+            *//*Output.WriteLine(files.Halo3ODST.Screenshots.Count + " Screenshots for Halo 3: ODST");
+            Halo3ODSTImportPanel.Add(files.Halo3ODST.Screenshots, ExportPanel.FileType.Screenshot);*//*
 
+            Halo4ImportPanel.Add(files.Halo4.Maps, ExportPanel.FileType.Map);
+            Halo4ImportPanel.Add(files.Halo4.GameTypes, ExportPanel.FileType.Gametype);
+            Halo4ImportPanel.Add(files.Halo4.Screenshots, ExportPanel.FileType.Screenshot);
+            Output.WriteLine(files.Halo4.Maps.Count + " Maps, " + files.Halo4.GameTypes.Count + " Gametypes, and " + files.Halo4.Screenshots.Count + " Screenshots for Halo 4");
+
+
+            Output.WriteLine("All files in Import tab listed!");*/
         }
-
-        private void ImportTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FilesLabel_i_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

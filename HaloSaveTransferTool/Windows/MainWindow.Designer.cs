@@ -34,26 +34,27 @@
             this.FilesPannel = new System.Windows.Forms.TableLayoutPanel();
             this.gameTabControl = new System.Windows.Forms.TabControl();
             this.ReachTab = new System.Windows.Forms.TabPage();
-            this.ReachExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
             this.Halo3 = new System.Windows.Forms.TabPage();
-            this.Halo3ExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
             this.ODST = new System.Windows.Forms.TabPage();
-            this.Halo3ODSTExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
             this.Halo4Tab = new System.Windows.Forms.TabPage();
-            this.Halo4ExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
             this.OpenPannel = new System.Windows.Forms.Panel();
             this.OpenedLabel = new System.Windows.Forms.Label();
             this.Open = new System.Windows.Forms.Button();
             this.exportAndSettingsTabControl = new System.Windows.Forms.TabControl();
             this.ImportTab = new System.Windows.Forms.TabPage();
+            this.ImportTable = new System.Windows.Forms.TableLayoutPanel();
+            this.OpenPanel = new System.Windows.Forms.Panel();
+            this.OpenedLabel_import = new System.Windows.Forms.Label();
+            this.Open_i = new System.Windows.Forms.Button();
+            this.GamesTabControl = new System.Windows.Forms.TabControl();
+            this.ReachTab_i = new System.Windows.Forms.TabPage();
+            this.Halo3Tab_i = new System.Windows.Forms.TabPage();
+            this.Halo4Tab_i = new System.Windows.Forms.TabPage();
             this.ManageTab = new System.Windows.Forms.TabPage();
             this.MapAndGameTypeTabControl = new System.Windows.Forms.TabControl();
             this.MapsTab = new System.Windows.Forms.TabPage();
-            this.ManageMapsPanel = new HaloMCCPCSaveTransferTool.ManagePanel();
             this.GameTypesTab = new System.Windows.Forms.TabPage();
-            this.ManageGameTypesPanel = new HaloMCCPCSaveTransferTool.ManagePanel();
             this.SettingsTab = new System.Windows.Forms.TabPage();
-            this.settingsControl = new HaloMCCPCSaveTransferTool.SettingsControl();
             this.OtherTabPage = new System.Windows.Forms.TabPage();
             this.IssuesLinkLabel = new System.Windows.Forms.LinkLabel();
             this.HelpLink = new System.Windows.Forms.LinkLabel();
@@ -61,14 +62,16 @@
             this.GitHubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.ImportTable = new System.Windows.Forms.TableLayoutPanel();
-            this.OpenPanel = new System.Windows.Forms.Panel();
-            this.GamesTabControl = new System.Windows.Forms.TabControl();
-            this.ReachTab_i = new System.Windows.Forms.TabPage();
-            this.Halo3Tab_i = new System.Windows.Forms.TabPage();
-            this.Halo4Tab_i = new System.Windows.Forms.TabPage();
-            this.Open_i = new System.Windows.Forms.Button();
-            this.FilesLabel_i = new System.Windows.Forms.Label();
+            this.ReachExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
+            this.Halo3ExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
+            this.Halo3ODSTExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
+            this.Halo4ExportPanel = new HaloMCCPCSaveTransferTool.ExportPanel();
+            this.ManageMapsPanel = new HaloMCCPCSaveTransferTool.ManagePanel();
+            this.ManageGameTypesPanel = new HaloMCCPCSaveTransferTool.ManagePanel();
+            this.settingsControl = new HaloMCCPCSaveTransferTool.SettingsControl();
+            this.ReachImportPanel = new HaloMCCPCSaveTransferTool.User_Controls.ImportPanel();
+            this.Halo3ImportPanel = new HaloMCCPCSaveTransferTool.User_Controls.ImportPanel();
+            this.Halo4ImportPanel = new HaloMCCPCSaveTransferTool.User_Controls.ImportPanel();
             this.ExportTab.SuspendLayout();
             this.FilesPannel.SuspendLayout();
             this.gameTabControl.SuspendLayout();
@@ -79,15 +82,18 @@
             this.OpenPannel.SuspendLayout();
             this.exportAndSettingsTabControl.SuspendLayout();
             this.ImportTab.SuspendLayout();
+            this.ImportTable.SuspendLayout();
+            this.OpenPanel.SuspendLayout();
+            this.GamesTabControl.SuspendLayout();
+            this.ReachTab_i.SuspendLayout();
+            this.Halo3Tab_i.SuspendLayout();
+            this.Halo4Tab_i.SuspendLayout();
             this.ManageTab.SuspendLayout();
             this.MapAndGameTypeTabControl.SuspendLayout();
             this.MapsTab.SuspendLayout();
             this.GameTypesTab.SuspendLayout();
             this.SettingsTab.SuspendLayout();
             this.OtherTabPage.SuspendLayout();
-            this.ImportTable.SuspendLayout();
-            this.OpenPanel.SuspendLayout();
-            this.GamesTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // OutputTextBox
@@ -151,14 +157,6 @@
             this.ReachTab.Text = "Reach";
             this.ReachTab.UseVisualStyleBackColor = true;
             // 
-            // ReachExportPanel
-            // 
-            this.ReachExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReachExportPanel.Location = new System.Drawing.Point(3, 3);
-            this.ReachExportPanel.Name = "ReachExportPanel";
-            this.ReachExportPanel.Size = new System.Drawing.Size(983, 355);
-            this.ReachExportPanel.TabIndex = 0;
-            // 
             // Halo3
             // 
             this.Halo3.Controls.Add(this.Halo3ExportPanel);
@@ -169,14 +167,6 @@
             this.Halo3.TabIndex = 1;
             this.Halo3.Text = "Halo 3";
             this.Halo3.UseVisualStyleBackColor = true;
-            // 
-            // Halo3ExportPanel
-            // 
-            this.Halo3ExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Halo3ExportPanel.Location = new System.Drawing.Point(3, 3);
-            this.Halo3ExportPanel.Name = "Halo3ExportPanel";
-            this.Halo3ExportPanel.Size = new System.Drawing.Size(983, 355);
-            this.Halo3ExportPanel.TabIndex = 1;
             // 
             // ODST
             // 
@@ -189,14 +179,6 @@
             this.ODST.Text = "ODST";
             this.ODST.UseVisualStyleBackColor = true;
             // 
-            // Halo3ODSTExportPanel
-            // 
-            this.Halo3ODSTExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Halo3ODSTExportPanel.Location = new System.Drawing.Point(3, 3);
-            this.Halo3ODSTExportPanel.Name = "Halo3ODSTExportPanel";
-            this.Halo3ODSTExportPanel.Size = new System.Drawing.Size(983, 355);
-            this.Halo3ODSTExportPanel.TabIndex = 1;
-            // 
             // Halo4Tab
             // 
             this.Halo4Tab.Controls.Add(this.Halo4ExportPanel);
@@ -207,14 +189,6 @@
             this.Halo4Tab.TabIndex = 3;
             this.Halo4Tab.Text = "Halo 4";
             this.Halo4Tab.UseVisualStyleBackColor = true;
-            // 
-            // Halo4ExportPanel
-            // 
-            this.Halo4ExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Halo4ExportPanel.Location = new System.Drawing.Point(3, 3);
-            this.Halo4ExportPanel.Name = "Halo4ExportPanel";
-            this.Halo4ExportPanel.Size = new System.Drawing.Size(983, 355);
-            this.Halo4ExportPanel.TabIndex = 2;
             // 
             // OpenPannel
             // 
@@ -269,7 +243,91 @@
             this.ImportTab.TabIndex = 4;
             this.ImportTab.Text = "Import";
             this.ImportTab.UseVisualStyleBackColor = true;
-            this.ImportTab.Click += new System.EventHandler(this.ImportTab_Click);
+            // 
+            // ImportTable
+            // 
+            this.ImportTable.ColumnCount = 1;
+            this.ImportTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ImportTable.Controls.Add(this.OpenPanel, 0, 0);
+            this.ImportTable.Controls.Add(this.GamesTabControl, 0, 1);
+            this.ImportTable.Location = new System.Drawing.Point(3, 3);
+            this.ImportTable.Name = "ImportTable";
+            this.ImportTable.RowCount = 2;
+            this.ImportTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.ImportTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ImportTable.Size = new System.Drawing.Size(1003, 433);
+            this.ImportTable.TabIndex = 0;
+            // 
+            // OpenPanel
+            // 
+            this.OpenPanel.Controls.Add(this.OpenedLabel_import);
+            this.OpenPanel.Controls.Add(this.Open_i);
+            this.OpenPanel.Location = new System.Drawing.Point(3, 3);
+            this.OpenPanel.Name = "OpenPanel";
+            this.OpenPanel.Size = new System.Drawing.Size(997, 34);
+            this.OpenPanel.TabIndex = 0;
+            // 
+            // OpenedLabel_import
+            // 
+            this.OpenedLabel_import.AutoSize = true;
+            this.OpenedLabel_import.Location = new System.Drawing.Point(109, 11);
+            this.OpenedLabel_import.Name = "OpenedLabel_import";
+            this.OpenedLabel_import.Size = new System.Drawing.Size(65, 13);
+            this.OpenedLabel_import.TabIndex = 1;
+            this.OpenedLabel_import.Text = "MCC files in:";
+            // 
+            // Open_i
+            // 
+            this.Open_i.Location = new System.Drawing.Point(3, 3);
+            this.Open_i.Name = "Open_i";
+            this.Open_i.Size = new System.Drawing.Size(100, 28);
+            this.Open_i.TabIndex = 0;
+            this.Open_i.Text = "Open";
+            this.Open_i.UseVisualStyleBackColor = true;
+            this.Open_i.Click += new System.EventHandler(this.Open_i_Click);
+            // 
+            // GamesTabControl
+            // 
+            this.GamesTabControl.Controls.Add(this.ReachTab_i);
+            this.GamesTabControl.Controls.Add(this.Halo3Tab_i);
+            this.GamesTabControl.Controls.Add(this.Halo4Tab_i);
+            this.GamesTabControl.Location = new System.Drawing.Point(3, 43);
+            this.GamesTabControl.Name = "GamesTabControl";
+            this.GamesTabControl.SelectedIndex = 0;
+            this.GamesTabControl.Size = new System.Drawing.Size(997, 387);
+            this.GamesTabControl.TabIndex = 1;
+            // 
+            // ReachTab_i
+            // 
+            this.ReachTab_i.Controls.Add(this.ReachImportPanel);
+            this.ReachTab_i.Location = new System.Drawing.Point(4, 22);
+            this.ReachTab_i.Name = "ReachTab_i";
+            this.ReachTab_i.Padding = new System.Windows.Forms.Padding(3);
+            this.ReachTab_i.Size = new System.Drawing.Size(989, 361);
+            this.ReachTab_i.TabIndex = 0;
+            this.ReachTab_i.Text = "Reach";
+            this.ReachTab_i.UseVisualStyleBackColor = true;
+            // 
+            // Halo3Tab_i
+            // 
+            this.Halo3Tab_i.Controls.Add(this.Halo3ImportPanel);
+            this.Halo3Tab_i.Location = new System.Drawing.Point(4, 22);
+            this.Halo3Tab_i.Name = "Halo3Tab_i";
+            this.Halo3Tab_i.Padding = new System.Windows.Forms.Padding(3);
+            this.Halo3Tab_i.Size = new System.Drawing.Size(989, 361);
+            this.Halo3Tab_i.TabIndex = 1;
+            this.Halo3Tab_i.Text = "Halo 3";
+            this.Halo3Tab_i.UseVisualStyleBackColor = true;
+            // 
+            // Halo4Tab_i
+            // 
+            this.Halo4Tab_i.Controls.Add(this.Halo4ImportPanel);
+            this.Halo4Tab_i.Location = new System.Drawing.Point(4, 22);
+            this.Halo4Tab_i.Name = "Halo4Tab_i";
+            this.Halo4Tab_i.Size = new System.Drawing.Size(989, 361);
+            this.Halo4Tab_i.TabIndex = 2;
+            this.Halo4Tab_i.Text = "Halo 4";
+            this.Halo4Tab_i.UseVisualStyleBackColor = true;
             // 
             // ManageTab
             // 
@@ -304,15 +362,6 @@
             this.MapsTab.Text = "Maps";
             this.MapsTab.UseVisualStyleBackColor = true;
             // 
-            // ManageMapsPanel
-            // 
-            this.ManageMapsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ManageMapsPanel.Location = new System.Drawing.Point(3, 3);
-            this.ManageMapsPanel.Name = "ManageMapsPanel";
-            this.ManageMapsPanel.Size = new System.Drawing.Size(989, 401);
-            this.ManageMapsPanel.TabIndex = 0;
-            this.ManageMapsPanel.Load += new System.EventHandler(this.ManageMapsPanel_Load);
-            // 
             // GameTypesTab
             // 
             this.GameTypesTab.Controls.Add(this.ManageGameTypesPanel);
@@ -324,14 +373,6 @@
             this.GameTypesTab.Text = "Game Types";
             this.GameTypesTab.UseVisualStyleBackColor = true;
             // 
-            // ManageGameTypesPanel
-            // 
-            this.ManageGameTypesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ManageGameTypesPanel.Location = new System.Drawing.Point(3, 3);
-            this.ManageGameTypesPanel.Name = "ManageGameTypesPanel";
-            this.ManageGameTypesPanel.Size = new System.Drawing.Size(989, 401);
-            this.ManageGameTypesPanel.TabIndex = 0;
-            // 
             // SettingsTab
             // 
             this.SettingsTab.Controls.Add(this.settingsControl);
@@ -342,14 +383,6 @@
             this.SettingsTab.TabIndex = 1;
             this.SettingsTab.Text = "Settings";
             this.SettingsTab.UseVisualStyleBackColor = true;
-            // 
-            // settingsControl
-            // 
-            this.settingsControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsControl.Location = new System.Drawing.Point(3, 3);
-            this.settingsControl.Name = "settingsControl";
-            this.settingsControl.Size = new System.Drawing.Size(1003, 433);
-            this.settingsControl.TabIndex = 0;
             // 
             // OtherTabPage
             // 
@@ -424,88 +457,82 @@
             this.saveFileDialog.AddExtension = false;
             this.saveFileDialog.CheckFileExists = true;
             // 
-            // ImportTable
+            // ReachExportPanel
             // 
-            this.ImportTable.ColumnCount = 1;
-            this.ImportTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ImportTable.Controls.Add(this.GamesTabControl, 0, 1);
-            this.ImportTable.Controls.Add(this.OpenPanel, 0, 0);
-            this.ImportTable.Location = new System.Drawing.Point(3, 3);
-            this.ImportTable.Name = "ImportTable";
-            this.ImportTable.RowCount = 2;
-            this.ImportTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.ImportTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ImportTable.Size = new System.Drawing.Size(1003, 433);
-            this.ImportTable.TabIndex = 0;
-            this.ImportTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.ReachExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReachExportPanel.Location = new System.Drawing.Point(3, 3);
+            this.ReachExportPanel.Name = "ReachExportPanel";
+            this.ReachExportPanel.Size = new System.Drawing.Size(983, 355);
+            this.ReachExportPanel.TabIndex = 0;
             // 
-            // OpenPanel
+            // Halo3ExportPanel
             // 
-            this.OpenPanel.Controls.Add(this.FilesLabel_i);
-            this.OpenPanel.Controls.Add(this.Open_i);
-            this.OpenPanel.Location = new System.Drawing.Point(3, 3);
-            this.OpenPanel.Name = "OpenPanel";
-            this.OpenPanel.Size = new System.Drawing.Size(997, 34);
-            this.OpenPanel.TabIndex = 0;
+            this.Halo3ExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Halo3ExportPanel.Location = new System.Drawing.Point(3, 3);
+            this.Halo3ExportPanel.Name = "Halo3ExportPanel";
+            this.Halo3ExportPanel.Size = new System.Drawing.Size(983, 355);
+            this.Halo3ExportPanel.TabIndex = 1;
             // 
-            // GamesTabControl
+            // Halo3ODSTExportPanel
             // 
-            this.GamesTabControl.Controls.Add(this.ReachTab_i);
-            this.GamesTabControl.Controls.Add(this.Halo3Tab_i);
-            this.GamesTabControl.Controls.Add(this.Halo4Tab_i);
-            this.GamesTabControl.Location = new System.Drawing.Point(3, 43);
-            this.GamesTabControl.Name = "GamesTabControl";
-            this.GamesTabControl.SelectedIndex = 0;
-            this.GamesTabControl.Size = new System.Drawing.Size(997, 387);
-            this.GamesTabControl.TabIndex = 1;
+            this.Halo3ODSTExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Halo3ODSTExportPanel.Location = new System.Drawing.Point(3, 3);
+            this.Halo3ODSTExportPanel.Name = "Halo3ODSTExportPanel";
+            this.Halo3ODSTExportPanel.Size = new System.Drawing.Size(983, 355);
+            this.Halo3ODSTExportPanel.TabIndex = 1;
             // 
-            // ReachTab_i
+            // Halo4ExportPanel
             // 
-            this.ReachTab_i.Location = new System.Drawing.Point(4, 22);
-            this.ReachTab_i.Name = "ReachTab_i";
-            this.ReachTab_i.Padding = new System.Windows.Forms.Padding(3);
-            this.ReachTab_i.Size = new System.Drawing.Size(989, 361);
-            this.ReachTab_i.TabIndex = 0;
-            this.ReachTab_i.Text = "Reach";
-            this.ReachTab_i.UseVisualStyleBackColor = true;
+            this.Halo4ExportPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Halo4ExportPanel.Location = new System.Drawing.Point(3, 3);
+            this.Halo4ExportPanel.Name = "Halo4ExportPanel";
+            this.Halo4ExportPanel.Size = new System.Drawing.Size(983, 355);
+            this.Halo4ExportPanel.TabIndex = 2;
             // 
-            // Halo3Tab_i
+            // ManageMapsPanel
             // 
-            this.Halo3Tab_i.Location = new System.Drawing.Point(4, 22);
-            this.Halo3Tab_i.Name = "Halo3Tab_i";
-            this.Halo3Tab_i.Padding = new System.Windows.Forms.Padding(3);
-            this.Halo3Tab_i.Size = new System.Drawing.Size(989, 361);
-            this.Halo3Tab_i.TabIndex = 1;
-            this.Halo3Tab_i.Text = "Halo 3";
-            this.Halo3Tab_i.UseVisualStyleBackColor = true;
+            this.ManageMapsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManageMapsPanel.Location = new System.Drawing.Point(3, 3);
+            this.ManageMapsPanel.Name = "ManageMapsPanel";
+            this.ManageMapsPanel.Size = new System.Drawing.Size(989, 401);
+            this.ManageMapsPanel.TabIndex = 0;
             // 
-            // Halo4Tab_i
+            // ManageGameTypesPanel
             // 
-            this.Halo4Tab_i.Location = new System.Drawing.Point(4, 22);
-            this.Halo4Tab_i.Name = "Halo4Tab_i";
-            this.Halo4Tab_i.Size = new System.Drawing.Size(989, 361);
-            this.Halo4Tab_i.TabIndex = 2;
-            this.Halo4Tab_i.Text = "Halo 4";
-            this.Halo4Tab_i.UseVisualStyleBackColor = true;
+            this.ManageGameTypesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManageGameTypesPanel.Location = new System.Drawing.Point(3, 3);
+            this.ManageGameTypesPanel.Name = "ManageGameTypesPanel";
+            this.ManageGameTypesPanel.Size = new System.Drawing.Size(989, 401);
+            this.ManageGameTypesPanel.TabIndex = 0;
             // 
-            // Open_i
+            // settingsControl
             // 
-            this.Open_i.Location = new System.Drawing.Point(3, 3);
-            this.Open_i.Name = "Open_i";
-            this.Open_i.Size = new System.Drawing.Size(100, 28);
-            this.Open_i.TabIndex = 0;
-            this.Open_i.Text = "Open";
-            this.Open_i.UseVisualStyleBackColor = true;
+            this.settingsControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingsControl.Location = new System.Drawing.Point(3, 3);
+            this.settingsControl.Name = "settingsControl";
+            this.settingsControl.Size = new System.Drawing.Size(1003, 433);
+            this.settingsControl.TabIndex = 0;
             // 
-            // FilesLabel_i
+            // ReachImportPanel
             // 
-            this.FilesLabel_i.AutoSize = true;
-            this.FilesLabel_i.Location = new System.Drawing.Point(109, 11);
-            this.FilesLabel_i.Name = "FilesLabel_i";
-            this.FilesLabel_i.Size = new System.Drawing.Size(65, 13);
-            this.FilesLabel_i.TabIndex = 1;
-            this.FilesLabel_i.Text = "MCC files in:";
-            this.FilesLabel_i.Click += new System.EventHandler(this.FilesLabel_i_Click);
+            this.ReachImportPanel.Location = new System.Drawing.Point(3, 3);
+            this.ReachImportPanel.Name = "ReachImportPanel";
+            this.ReachImportPanel.Size = new System.Drawing.Size(983, 355);
+            this.ReachImportPanel.TabIndex = 0;
+            // 
+            // Halo3ImportPanel
+            // 
+            this.Halo3ImportPanel.Location = new System.Drawing.Point(3, 3);
+            this.Halo3ImportPanel.Name = "Halo3ImportPanel";
+            this.Halo3ImportPanel.Size = new System.Drawing.Size(983, 355);
+            this.Halo3ImportPanel.TabIndex = 0;
+            // 
+            // Halo4ImportPanel
+            // 
+            this.Halo4ImportPanel.Location = new System.Drawing.Point(3, 3);
+            this.Halo4ImportPanel.Name = "Halo4ImportPanel";
+            this.Halo4ImportPanel.Size = new System.Drawing.Size(983, 355);
+            this.Halo4ImportPanel.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -528,6 +555,13 @@
             this.OpenPannel.PerformLayout();
             this.exportAndSettingsTabControl.ResumeLayout(false);
             this.ImportTab.ResumeLayout(false);
+            this.ImportTable.ResumeLayout(false);
+            this.OpenPanel.ResumeLayout(false);
+            this.OpenPanel.PerformLayout();
+            this.GamesTabControl.ResumeLayout(false);
+            this.ReachTab_i.ResumeLayout(false);
+            this.Halo3Tab_i.ResumeLayout(false);
+            this.Halo4Tab_i.ResumeLayout(false);
             this.ManageTab.ResumeLayout(false);
             this.MapAndGameTypeTabControl.ResumeLayout(false);
             this.MapsTab.ResumeLayout(false);
@@ -535,10 +569,6 @@
             this.SettingsTab.ResumeLayout(false);
             this.OtherTabPage.ResumeLayout(false);
             this.OtherTabPage.PerformLayout();
-            this.ImportTable.ResumeLayout(false);
-            this.OpenPanel.ResumeLayout(false);
-            this.OpenPanel.PerformLayout();
-            this.GamesTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -582,8 +612,11 @@
         private System.Windows.Forms.TabPage Halo3Tab_i;
         private System.Windows.Forms.TabPage Halo4Tab_i;
         private System.Windows.Forms.Panel OpenPanel;
-        private System.Windows.Forms.Label FilesLabel_i;
+        private System.Windows.Forms.Label OpenedLabel_import;
         private System.Windows.Forms.Button Open_i;
+        private User_Controls.ImportPanel ReachImportPanel;
+        private User_Controls.ImportPanel Halo3ImportPanel;
+        private User_Controls.ImportPanel Halo4ImportPanel;
     }
 }
 
